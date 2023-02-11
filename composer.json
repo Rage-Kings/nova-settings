@@ -1,0 +1,65 @@
+{
+    "name": "ragekings/nova-settings",
+    "description": "Nova Settings Package",
+    "keywords": [
+        "laravel",
+        "nova",
+        "settings"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "laravel/nova": "^3.0|^4.0"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "laravel/legacy-factories": "^1.3",
+        "orchestra/testbench": "^7.6",
+        "nunomaduro/larastan": "^2.1"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/SettingsHelper.php"
+        ],
+        "psr-4": {
+            "RageKings\\NovaSettings\\": "src"
+        },
+        "classmap": [
+            "database/factories",
+            "database/migrations"
+        ]
+    },
+    "autoload-dev": {
+        "files": [
+            "src/Helpers/SettingsHelper.php"
+        ],
+        "psr-4": {
+            "RageKings\\NovaSettings\\Tests\\": "tests/",
+            "RageKings\\NovaSettings\\Tests\\Unit\\": "tests/Unit/",
+            "RageKings\\NovaSettings\\Tests\\Feature\\": "tests/Feature/",
+            "RageKings\\NovaSettings\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RageKings\\NovaSettings\\SettingsToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com/"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
